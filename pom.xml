@@ -1,0 +1,60 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.zutubi.android</groupId>
+	<artifactId>android-junit-report</artifactId>
+	<packaging>jar</packaging>
+	<name>android-junit-report</name>
+	<version>1.1.5-SNAPSHOT</version>
+	<build>
+		<sourceDirectory>src</sourceDirectory>
+		<outputDirectory>build</outputDirectory>
+		<plugins>
+			<plugin>
+				<artifactId>maven-jar-plugin</artifactId>
+				<version>2.3.1</version>
+				<configuration>
+					<archive>
+						<manifestEntries>
+							<Implementation-Vendor>Zutubi Pty Ltd</Implementation-Vendor>
+							<Implementation-Title>Android JUnit Report Test Runner</Implementation-Title>
+							<Implementation-Version>${version}</Implementation-Version>
+						</manifestEntries>
+					</archive>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+	<dependencies>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.8.2</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.google.android</groupId>
+			<artifactId>android-test</artifactId>
+			<version>2.2.1</version>
+			<scope>provided</scope>
+		</dependency>
+	</dependencies>
+	<distributionManagement>
+		<repository>
+			<id>wakaleo-releases</id>
+			<name>Wakaleo Maven Repository</name>
+			<url>http://www.wakaleo-labs.com/nexus/content/repositories/releases</url>
+		</repository>
+		<snapshotRepository>
+			<id>wakaleo-snapshots</id>
+			<name>Wakaleo Maven Snapshot Repository</name>
+			<url>http://www.wakaleo-labs.com/nexus/content/repositories/snapshots</url>
+		</snapshotRepository>
+	</distributionManagement>
+
+	<scm>
+		<connection>scm:git:ssh://github.com/wakaleo/${project.artifactId}.git</connection>
+		<developerConnection>scm:git:ssh://git@github.com/wakaleo/${project.artifactId}.git</developerConnection>
+		<url>http://github.com/wakaleo/${project.artifactId}</url>
+	</scm>
+</project>
